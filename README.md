@@ -6,21 +6,41 @@ Aplicación iOS desarrollada en SwiftUI que consume artículos de la API de The 
 
 ## Descripción
 
-Esta aplicación muestra una lista de artículos obtenidos desde una API.
-También guarda la información localmente para poder mostrar contenido cuando no hay conexión a internet.
+RavenNYTimes es una aplicación que muestra una lista de artículos obtenidos desde la API de NYTimes. La app implementa persistencia local para permitir el acceso a la información incluso sin conexión a internet.
 
-El proyecto está estructurado utilizando **arquitectura limpia (Clean Architecture)** junto con el patrón **MVVM**, lo que permite una mejor organización del código, escalabilidad y facilidad para realizar pruebas.
+El proyecto está estructurado utilizando **Clean Architecture** junto con el patrón **MVVM**, con el objetivo de mantener una clara separación de responsabilidades, facilitar la escalabilidad y permitir la integración de pruebas de manera sencilla.
 
 ---
 
 ## Características
 
-* Consumo de API
+* Consumo de API (NYTimes)
 * Persistencia local con Core Data
-* Soporte sin internet
+* Soporte offline (offline-first)
 * Arquitectura limpia (Clean Architecture)
 * Patrón MVVM
-* Interfaz en SwiftUI
+* Interfaz desarrollada con SwiftUI
+
+---
+
+## Arquitectura
+
+La aplicación sigue un enfoque basado en capas:
+
+* **Presentation:** SwiftUI Views + ViewModels
+* **Domain:** Use Cases
+* **Data:** Repository, API Service y Core Data
+
+Flujo de datos:
+
+View → ViewModel → UseCase → Repository → API / Core Data
+
+---
+
+## Requisitos
+
+* Xcode 14.2 o superior
+* iOS 15.6 o superior
 
 ---
 
@@ -28,7 +48,7 @@ El proyecto está estructurado utilizando **arquitectura limpia (Clean Architect
 
 1. Clona el repositorio
 2. Abre el proyecto en Xcode
-3. Ejecuta la app en simulador o dispositivo
+3. Ejecuta la aplicación en simulador o dispositivo físico
 
 ---
 
@@ -36,7 +56,7 @@ El proyecto está estructurado utilizando **arquitectura limpia (Clean Architect
 
 Agrega tu API Key de NYTimes en el proyecto:
 
-```swift id="cfg1"
+```swift id="cfg2"
 let apiKey = "qTl6HA9lEk9bHwEMNSrdjRAceMnSqQEZ"
 ```
 
@@ -44,9 +64,37 @@ let apiKey = "qTl6HA9lEk9bHwEMNSrdjRAceMnSqQEZ"
 
 ## Funcionamiento
 
-* Si hay internet: obtiene datos de la API y los guarda
-* Si no hay internet: muestra los datos guardados
-* Si no hay datos: muestra un error
+* Con conexión a internet:
+
+  * Se consumen los datos desde la API
+  * Se almacenan en Core Data
+
+* Sin conexión a internet:
+
+  * Se muestran los datos almacenados localmente
+
+* Sin conexión y sin datos:
+
+  * Se muestra un estado de error controlado
+
+---
+
+## Decisiones Técnicas
+
+* Se utilizó **MVVM** para desacoplar la lógica de presentación de la UI
+* Se implementó **Clean Architecture** para facilitar escalabilidad y mantenimiento
+* Se empleó **Core Data** para soportar un enfoque offline-first
+* Se utilizó un **Repository Pattern** para abstraer las fuentes de datos
+
+---
+
+## Mejoras Futuras
+
+* Implementar paginación
+* Agregar búsqueda de artículos
+* Incorporar favoritos
+* Mejorar estrategia de cache (expiración de datos)
+* Añadir pruebas unitarias adicionales
 
 ---
 
