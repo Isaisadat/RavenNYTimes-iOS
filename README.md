@@ -70,6 +70,17 @@ Para ejecutar las pruebas en Xcode:
 * Selecciona el esquema del proyecto
 * Presiona `Cmd + U`
 
+## Screenshots
+
+### Lista de artículos
+
+![Home](./screenshots/home.png)
+
+### Detalle del artículo
+
+![Detail](./screenshots/detail.png)
+
+
 ---
 
 ## Funcionamiento

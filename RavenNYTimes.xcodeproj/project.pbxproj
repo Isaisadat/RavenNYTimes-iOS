@@ -46,6 +46,11 @@
 			path = RavenNYTimesUITests;
 			sourceTree = "<group>";
 		};
+		DA8AB2512F919DBF00E5E2E0 /* screenshots */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = screenshots;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +81,7 @@
 		DA8AB1D42F90BB8100E5E2E0 = {
 			isa = PBXGroup;
 			children = (
+				DA8AB2512F919DBF00E5E2E0 /* screenshots */,
 				DA8AB2502F9164B500E5E2E0 /* README.md */,
 				DA8AB1DF2F90BB8100E5E2E0 /* RavenNYTimes */,
 				DA8AB1F22F90BB8200E5E2E0 /* RavenNYTimesTests */,
@@ -111,6 +117,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				DA8AB1DF2F90BB8100E5E2E0 /* RavenNYTimes */,
+				DA8AB2512F919DBF00E5E2E0 /* screenshots */,
 			);
 			name = RavenNYTimes;
 			packageProductDependencies = (
