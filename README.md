@@ -59,6 +59,16 @@ Agrega tu API Key de NYTimes en el proyecto:
 ```swift id="cfg2"
 let apiKey = "qTl6HA9lEk9bHwEMNSrdjRAceMnSqQEZ"
 ```
+## Pruebas
+
+Se incluyen pruebas unitarias básicas enfocadas en la lógica principal de la aplicación.
+
+Las pruebas están orientadas a validar el comportamiento de los ViewModels y casos de uso, asegurando el correcto manejo de estados como carga, éxito y error.
+
+Para ejecutar las pruebas en Xcode:
+
+* Selecciona el esquema del proyecto
+* Presiona `Cmd + U`
 
 ---
 
